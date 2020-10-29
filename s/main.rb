@@ -4,7 +4,7 @@
 # Robert C. Martin
 # =============================================
 
-class LogtSender
+class LogSender
   def initialize(data, user)
     @data = data
     @user = user
