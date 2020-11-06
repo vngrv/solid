@@ -75,8 +75,8 @@ class LogSender
         @user = user
     end
 
-    def send_log(sender = MailSender.new, message)
-        sender.send(@user, message)
+    def send_log(sender = MailSender.new)
+        sender.send(@user, @log)
     end
 end
 
@@ -93,9 +93,7 @@ end
 # === SOLUTION ================================
 
 class Sender
-    def send(user, message)
-        raise Error
-    end
+    def send(user, message); end
 end
 
 class MailSender < Sender
