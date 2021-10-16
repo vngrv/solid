@@ -54,7 +54,7 @@ end
 # =============================================
 
 class LogGenerator
-  def initialize data
+  def initialize(data)
     @data = data
   end
 

@@ -2,7 +2,7 @@
 # Interface Segregation Principle
 # 
 # Clients should not be forced to depend upon
-# interfaces thah thay do not use
+# interfaces that thay do not use
 #
 # Robert C.Martion
 # =============================================
@@ -16,14 +16,14 @@ class Car
 end
 
 class Driver
-  def drive_car car
+  def drive_car(car)
     car.open_door
     car.start_engine
   end
 end
 
 class Machanic
-  def repair_car car
+  def repair_car(car)
     car.repair_enginge
   end
 end
@@ -61,14 +61,14 @@ class CarSettings
 end
 
 class Driver
-  def drive_car car
+  def drive_car(car)
     car.open_door
     car.drive_car
   end
 end
 
 class Mechanic
-  def repair_car car
+  def repair_car(car)
     car.repair_engine
   end
 end

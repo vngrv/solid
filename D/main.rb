@@ -10,30 +10,30 @@
 # =============================================
 
 class LogSender
-  def initialize data, user
+  def initialize(data, user)
     @data = data
     @user = user
   end
   
   def send_mail 
-    MailSender.new.send(@data, @user)
+    MailSender.new.send_message(@data, @user)
   end
 
   def send_vk
-    VKSender.new.send(@data, @user)
+    VKSender.new.send_message(@data, @user)
   end
 end 
 
 class Sender
-  def send data, user; end
+  def send_message(data, user); end
 end
 
 class MailSender < Sender
-  def send data, user; end
+  def send_message(data, user); end
 end
 
 class VKSender < Sender
-  def send data, user; end
+  def send_message(data, user); end
 end
 
 # === WARNING =================================
@@ -49,28 +49,28 @@ end
 # =============================================
 
 class LogSender
-  def initialize data, user
+  def initialize(data, user)
     @data = data
     @user = user
   end
     
-  def send_report (sender = MailSender.new)
-    sender.send(@data, @user)
+  def send_report(sender = MailSender.new)
+    sender.send_message(@data, @user)
   end
 end 
 
 class Sender
-  def send data, user; end
+  def send_message(data, user); end
 end
 
 class MailSender < Sender
-  def send data, user
+  def send_message(data, user)
     # implementation
   end
 end
 
 class VKSender < Sender
-  def send data, user
+  def send_message(data, user)
     # implementation 
   end
 end

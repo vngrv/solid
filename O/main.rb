@@ -31,7 +31,7 @@ class LogSender
 end
 
 class LogGenerator
-    def initialize data
+    def initialize(data)
       @data = data
     end
   
@@ -76,12 +76,12 @@ class LogSender
     end
 
     def send_log(sender = MailSender.new)
-        sender.send(@user, @log)
+        sender.send_message(@user, @log)
     end
 end
 
 class LogGenerator
-    def initialize data
+    def initialize(data)
       @data = data
     end
   
@@ -93,17 +93,17 @@ end
 # === SOLUTION ================================
 
 class Sender
-    def send(user, message); end
+    def send_message(user, message); end
 end
 
 class MailSender < Sender
-    def send(user, message)
+    def send_message(user, message)
         Mailer.deliver(to: user.email, message: message) 
     end
 end
 
 class VKSender < Sender
-    def send(user, message)
+    def send_message(user, message)
         VK.send(to: user.id_vk, message: message)
     end
 end

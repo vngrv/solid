@@ -27,7 +27,7 @@ class Cat < Animal
     end
 end
 
-def animal_sound animal
+def animal_sound(animal)
     "#{animal.class.name} #{animal.create_sound}"
 end
 
@@ -54,8 +54,8 @@ end
 # Положим, что в дочернем классе мы хотим 
 # изменить реализацию интерфейса, к примеру
 
-class Dog < class
-    def create_sound
+class Dog < Animal    
+  def create_sound
         ['sound1', 'sound2']
     end
 end
